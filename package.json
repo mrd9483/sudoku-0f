@@ -7,16 +7,32 @@
     "bin": {
         "sudoku-0f": "./dist/cli.js"
     },
+    "scripts": {
+        "build": "tsc",
+        "test": "node dist/test.js", 
+        "dev": "ts-node src/index.ts",
+        "prepublishOnly": "npm run build && npm test",
+        "start": "npm run build && npm test"
+    },
+    "keywords": ["sudoku", "16x16", "hex", "0f", "puzzle", "generator"],
+    "author": "Your Name <your.email@example.com>",
+    "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/mrd9483/sudoku-0f"
+        "url": "git+https://github.com/yourusername/sudoku-0f.git"
     },
     "bugs": {
-        "url": "https://github.com/mrd9483/sudoku-0f/issues"
+        "url": "https://github.com/yourusername/sudoku-0f/issues"
     },
-    "homepage": "https://github.com/mrd9483/sudoku-0f#readme",
-    "author": "Matthew Doyle <matthewrdoyle@gmail.com>",
-    "license": "MIT",
+    "homepage": "https://github.com/yourusername/sudoku-0f#readme",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0", 
+        "ts-node": "^10.9.0"
+    },
     "files": [
         "dist/",
         "README.md",
