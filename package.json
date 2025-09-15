@@ -9,13 +9,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/yourusername/sudoku-0f.git"
+        "url": "https://github.com/mrd9483/sudoku-0f"
     },
     "bugs": {
-        "url": "https://github.com/yourusername/sudoku-0f/issues"
+        "url": "https://github.com/mrd9483/sudoku-0f/issues"
     },
-    "homepage": "https://github.com/yourusername/sudoku-0f#readme",
-    "author": "Your Name <your.email@example.com>",
+    "homepage": "https://github.com/mrd9483/sudoku-0f#readme",
+    "author": "Matthew Doyle <matthewrdoyle@gmail.com>",
     "license": "MIT",
     "files": [
         "dist/",
