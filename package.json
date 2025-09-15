@@ -1,0 +1,25 @@
+{
+    "name": "sudoku-0f",
+    "version": "1.0.0",
+    "description": "16x16 Sudoku generator with hex display (0-F)",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "sudoku-0f": "./dist/cli.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/sudoku-0f.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yourusername/sudoku-0f/issues"
+    },
+    "homepage": "https://github.com/yourusername/sudoku-0f#readme",
+    "author": "Your Name <your.email@example.com>",
+    "license": "MIT",
+    "files": [
+        "dist/",
+        "README.md",
+        "LICENSE"
+    ]
+}
