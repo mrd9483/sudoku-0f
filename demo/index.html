@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16x16 Sudoku Generator Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>16x16 Sudoku Generator</h1>
+            <p>Generate and solve 16x16 Sudoku puzzles using hexadecimal digits (0-F)</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="mode">Mode:</label>
+                <select id="mode">
+                    <option value="complete">Complete Grid</option>
+                    <option value="puzzle">Puzzle</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="difficulty-group" style="display: none;">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy (singles only)</option>
+                    <option value="medium" selected>Medium (pairs + intersections)</option>
+                    <option value="hard">Hard (complex patterns)</option>
+                    <option value="expert">Expert (advanced techniques)</option>
+                </select>
+            </div>
+
+            <div class="control-group" id="technique-group" style="display: none;">
+                <label>
+                    <input type="checkbox" id="use-technique-difficulty"> Use Technique-Based Difficulty
+                </label>
+            </div>
+
+            <div class="control-group">
+                <button id="generate-btn">Generate</button>
+                <button id="validate-btn" disabled>Validate</button>
+                <button id="solve-btn" disabled>Show Solution</button>
+                <button id="clear-btn">Clear</button>
+            </div>
+
+        </div>
+
+        <div class="info-panel">
+            <div id="generation-info"></div>
+            <div id="validation-result"></div>
+            <div id="technique-analysis" style="display: none;"></div>
+        </div>
+
+        <div class="grid-container">
+            <div id="sudoku-grid"></div>
+        </div>
+
+        <div class="hex-display">
+            <h3>Hex Representation</h3>
+            <textarea id="hex-output" readonly placeholder="Hex representation will appear here..."></textarea>
+            <button id="load-hex-btn">Load from Hex</button>
+        </div>
+    </div>
+
+    <script src="../dist/index.browser.js"></script>
+    <script src="sudoku-demo.js"></script>
+</body>
+</html>

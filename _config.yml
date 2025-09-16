@@ -1,0 +1,18 @@
+# GitHub Pages configuration for Jekyll
+# Since we're serving static files, we don't need Jekyll processing
+include: []
+exclude: 
+  - src/
+  - scripts/
+  - node_modules/
+  - .github/
+  - package.json
+  - package-lock.json
+  - tsconfig.json
+  - README.md
+  - LICENSE
+
+# Disable Jekyll processing
+plugins: []
+markdown: false
+highlighter: false

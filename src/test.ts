@@ -1,5 +1,5 @@
 // src/test.ts
-import { generateSudoku16, validateSudoku16, Sudoku16Generator } from './index';
+import { generateSudoku16, generateSudokuPuzzle, validateSudoku16, Sudoku16Generator, printSudokuPuzzle } from './index';
 
 function runTests() {
     console.log('Testing 16x16 Sudoku Generator...\n');
@@ -39,11 +39,33 @@ function runTests() {
     const conversionValid = JSON.stringify(result.grid) === JSON.stringify(convertedBack);
     console.log(`   Hex conversion: ${conversionValid ? 'PASS' : 'FAIL'}\n`);
     
-    // Show sample output
-    console.log('4. Sample grid:');
+    // Test puzzle generation
+    console.log('4. Puzzle generation test:');
+    const puzzleResult = generateSudokuPuzzle({ difficulty: 'medium' });
+    console.log(`   Puzzle generated: ${puzzleResult.isValid ? 'SUCCESS' : 'FAILED'}`);
+    console.log(`   Difficulty: ${puzzleResult.difficulty}`);
+    console.log(`   Empty cells: ${puzzleResult.emptyCells}`);
+    console.log(`   Time: ${puzzleResult.generationTime}ms`);
+    
+    // Test different difficulties
+    console.log('\n5. Difficulty levels test:');
+    const difficulties = ['easy', 'medium', 'hard', 'expert'] as const;
+    for (const difficulty of difficulties) {
+        const testPuzzle = generateSudokuPuzzle({ difficulty });
+        console.log(`   ${difficulty}: ${testPuzzle.isValid ? 'SUCCESS' : 'FAILED'} (${testPuzzle.emptyCells} empty cells)`);
+    }
+    console.log();
+    
+    // Show sample outputs
+    console.log('6. Sample complete grid:');
     console.log(Sudoku16Generator.printGrid(result.grid, { compact: false }));
     
-    console.log('All tests completed!');
+    console.log('\n7. Sample puzzle:');
+    if (puzzleResult.isValid) {
+        printSudokuPuzzle(puzzleResult, false, false);
+    }
+    
+    console.log('\nAll tests completed!');
 }
 
 if (require.main === module) {

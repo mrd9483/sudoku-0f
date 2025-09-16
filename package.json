@@ -3,12 +3,16 @@
     "version": "1.0.0",
     "description": "16x16 Sudoku generator with hex display (0-F)",
     "main": "dist/index.js",
+    "browser": "dist/index.browser.js",
     "types": "dist/index.d.ts",
     "bin": {
         "sudoku-0f": "./dist/cli.js"
     },
     "scripts": {
-        "build": "tsc",
+        "build": "tsc && npm run build:browser",
+        "build:browser": "node scripts/build-browser.js",
+        "build:demo": "node scripts/build-demo.js",
+        "build:pages": "npm run build && npm run build:demo",
         "test": "node dist/test.js", 
         "dev": "ts-node src/index.ts",
         "prepublishOnly": "npm run build && npm test",
@@ -35,6 +39,7 @@
     },
     "files": [
         "dist/",
+        "scripts/",
         "README.md",
         "LICENSE"
     ]
